@@ -23,9 +23,16 @@ res.render(main_path,{thum:thum,art:thum});
 app.post("/search", async(req,res)=>{
 
 const watch =await axios("https://ophim1.com/phim/"+`${req.body.search}`);
-console.log(watch.data.movie.episode_total);
-var sotap =watch.data.movie.episode_total;
-res.render(index_path,{ep:sotap});
+console.log(watch.data.episodes[0].server_data[1].filename);
+var filename =watch.data.episodes[0].server_data[1].filename;
+console.log(watch.data.episodes[0].server_data.length);
+console.log(req.body.epp);
+var sotap =watch.data.episodes[0].server_data.length;
+console.log(watch.data.episodes[0].server_data[1].link_embed);
+var play =watch.data.episodes[0].server_data[1].link_embed;
+
+
+res.render(index_path,{ep:sotap,title:filename,play:play});
 });
 
 

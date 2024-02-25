@@ -22,14 +22,20 @@
         </form>
     </header>
     <section class="content">
-        <iframe class="film" src="https://vip.opstream12.com/share/3ce83f544dbe69bb4fb19211fc442c2f"
-            title="Iframe Example" allowfullscreen></iframe>
-            <% if (locals.ep) { %>  
-                <% for (let i = 0; i < locals.ep; i++) { %> 
-                    <button> tập <%= i+1 %></button> 
-                <% } %> 
+        <% if(locals.play) {%>
+        <iframe class="film" src="<%= play %>"
+            title="Iframe Example" allowfullscreen></iframe> <% } %>
+            <% if(locals.title) {%>
+            <div class="title"><h3><%=title %></h3></div> 
             <% } %>
-            
+            <div class="ep">
+                <% if (locals.ep) { %>  
+                    <% for (let i = 0; i < locals.ep; i++) { %> 
+                        <input class="btn" name="epp" type="submit" value="<%=i+1%>">
+                    <% } %> 
+                <% } %>
+                
+            </div>
     </section>
     <section class="recomand">dà</section>
 </body>

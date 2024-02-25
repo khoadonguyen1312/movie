@@ -76,3 +76,60 @@ header{
     
 }
 
+
+.ep{
+    display: grid;
+    grid-template-columns: repeat(10,2em);
+    column-gap: 32px;
+    margin-left: 20px;
+}
+
+.btn{
+    margin: 2px;
+    width: 4em;
+    height: 2em;
+    color: white;
+    background-color: #03C988;
+    border-radius: 3px;
+    
+}
+
+.btn:hover{
+ transform: translateY(-2px);
+ background-color: white;
+ color: #03C988;
+ animation: btn 10s ease;
+}
+
+@keyframes btn {
+    0% {
+      box-shadow: 0 0 10px white;
+    }
+    25% {
+      box-shadow: 0 0 15px white;
+    }
+    50% {
+      box-shadow: 0 0 20px white;
+    }
+    75% {
+      box-shadow: 0 0 15px white;
+    }
+    100% {
+      box-shadow: 0 0 10px white;
+    }
+  }
+
+.btn:active{
+    transform: translateY(2px);
+}
+
+.title{
+    height: 20vh;
+    background-color: #03C988;
+    width: 60%;
+}
+
+.title>h3{
+    color: white;
+    font-size: 2rem;
+}
