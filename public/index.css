@@ -76,16 +76,3 @@ header{
     
 }
 
-.pos{
-    width: 10vh;
-}
-
-.poster{
-    height: 40vh;
-}
-.a{
-    display: grid;
-    grid-template-columns: 200px 200px 200px 200px;
-    
-    
-}

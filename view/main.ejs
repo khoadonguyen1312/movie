@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h3 class="logo">Xem phim</h3>
+        <button class="top-phim">topphim</button>
+        <form action="/search" method="post">
+            <input class="entersearch" type="text" name="search" id="">
+            <input class="searchok" type="submit" value="Submit">
+        </form>
+    </header>
+    <div style="height: 20vh;"></div>
+<div class="a">
+    <% for (let i = 0; i < thum.length; i++) { %>
+        <div style="display: flex; flex-direction: column; margin: 0; ">
+        <img class="poster" src="https://ophim.cc/_next/image?url=http%3A%2F%2Fimg.ophim1.com%2Fuploads%2Fmovies%2F<%= thum[i].thumb_url %>&w=384&q=75" alt="">
+        <h3 style="color: white;" ><%= thum[i].name %></h3>
+    </div>s
+    <% } %> </div>
+</body>
+</html>
