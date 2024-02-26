@@ -17,11 +17,13 @@
 <body>
     <header>
         <h3 class="logo">Xem phim</h3>
-         <button class="top-phim">topphim</button>
-        <form action="/search" method="post"> <input class="entersearch" type="text" name="search" id=""> <input class="searchok" type="submit" value="Submit">
+         <form action="/" method="get"><button class="top-phim">home</button></form>
+        <form action="/search" method="post"> <input class="entersearch" type="text" name="search" id=""> <input class="searchok" type="submit" value="search">
         </form>
     </header>
+    <div class="display" >
     <section class="content">
+        
         <% if(locals.play) {%>
         <iframe class="film" src="<%= play %>"
             title="Iframe Example" allowfullscreen></iframe> <% } %>
@@ -29,15 +31,49 @@
             <div class="title"><h3><%=title %></h3></div> 
             <% } %>
             <div class="ep">
-                <% if (locals.ep) { %>  
-                    <% for (let i = 0; i < locals.ep; i++) { %> 
-                        <input class="btn" name="epp" type="submit" value="<%=i+1%>">
-                    <% } %> 
-                <% } %>
+                <form action="/change" method="post">
+                    <div class="btnc">
+                        <% for (let i = 0; i < locals.ep; i++) { %>
+                            <input class="btn" name="epp" type="submit" value="<%= i+1 %>" onclick="highlightButton(this)">
+                          <% } %>
+                          
+                          <script>
+                            let activeButton = null;
+                          
+                            function highlightButton(button) {
+                              // Hủy kích hoạt nút trước đó
+                              if (activeButton) {
+                                activeButton.style.backgroundColor = ''; // Đặt lại màu nền mặc định
+                              }
+                          
+                              // Kích hoạt nút mới
+                              activeButton = button;
+                              activeButton.style.backgroundColor = '#4CAF50'; // Đặt màu nền mới
+                            }
+                          </script>
+                          
+                </div>
+                </form>
                 
             </div>
+      
     </section>
-    <section class="recomand">dà</section>
+    <section class="recomand">
+        <div class="mota" >
+            <% if(locals.mota) { %>
+                <img class="poster" src="<%=hinhanh  %>" alt="">
+                <h3 class="tenphim"><%= tenphim %></h3>
+                <p class="noidung" ><%= mota %>
+                <h4 class="sotap"><%=hientai  %> / <%= daydu %></h4>
+                <h4 class="year"><%= nam %></h4>
+
+
+                <% } %>
+        </div>
+    </section>
+    <% if (locals.error) {%>
+        <script>alert("khong tim thay phim vui long thu lai ");</script> <% } %>
+</div>
 </body>
 
 </html>

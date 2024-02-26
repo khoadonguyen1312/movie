@@ -14,20 +14,29 @@ html{
 
 .content{
     
-    width: 75%;
+    width: 60%;
     height: 100vh;
 }
 
 .film{
-    width: 640px;
-    height: 360px;
+    width: 800px;
+    height: 460px;
     padding: 2rem;
     border: 0px solid;
+    
 }
 
+iframe video::-webkit-media-controls-panel {
+    background-color: #03C988; /* Màu nền của panel */
+  }
+
+  iframe video::-webkit-media-controls-seek-forward-button {
+    color: #03C988; /* Màu của nút tua video */
+  }
 header{
     display: flex;
     gap: 20px;
+    background-color: #1B4242;
 }
 
 .entersearch{
@@ -77,12 +86,7 @@ header{
 }
 
 
-.ep{
-    display: grid;
-    grid-template-columns: repeat(10,2em);
-    column-gap: 32px;
-    margin-left: 20px;
-}
+
 
 .btn{
     margin: 2px;
@@ -124,12 +128,71 @@ header{
 }
 
 .title{
-    height: 20vh;
+    height: 5vh;
     background-color: #03C988;
-    width: 60%;
+    width: 90%;
+    margin-left: 2.5%;
 }
 
 .title>h3{
+    padding: 0.7rem;
+    text-align: center;
     color: white;
     font-size: 2rem;
+}
+
+.btnc{
+    display: grid;
+    grid-template-columns: repeat(10,2em);
+    column-gap: 32px;
+    margin-left: 20px;
+
+}
+
+.mota{
+    background-color: #1B1A55;
+    color: #03C988;
+    height: 500vh;
+    width: 65vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30vh;
+    
+}
+
+.display {
+    display: flex;
+
+}
+
+.poster{
+    margin: 20px;
+    height: auto;
+    width: 30vh;
+    border: 2px solid #03C988;
+    margin-left: 20%;
+}
+
+.tenphim {
+    color: #03C988;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    text-align: center;
+    
+}
+
+.mota>p{
+    color: white;
+    font-size: 2rem;
+}
+
+.sotap{
+    text-align: center;
+    font-size: 2.5rem;
+    
+}
+
+.year{
+    text-align: center;
+    font-size: 2.5rem;
 }

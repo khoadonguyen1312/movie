@@ -81,7 +81,10 @@ header{
 }
 
 .poster{
-    height: 40vh;
+    height: 600px;
+    width:100vh;
+    
+    
 }
 .a{
     display: grid;
@@ -89,3 +92,11 @@ header{
     
     
 }
+
+iframe video::-webkit-media-controls-panel {
+    background-color: #03C988; /* Màu nền của panel */
+  }
+
+  iframe video::-webkit-media-controls-seek-forward-button {
+    color: #03C988; /* Màu của nút tua video */
+  }

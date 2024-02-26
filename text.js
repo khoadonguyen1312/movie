@@ -1,16 +1,8 @@
-function formatstr(){
-    const removeDiacritics = require("remove-diacritics");
-var string = "tân bảng phong thần";
 
-// Remove diacritics
-var newString = removeDiacritics(string);
 
-console.log("Original string: " + string);
-console.log("String without diacritics: " + newString);
+// Truyền giá trị cho hàm và in ra kết quả
+var inputString = "tân bảng phong thần";
+var result = formatstr(inputString);
 
-// Replace spaces with hyphens
-var stringWithHyphens = newString.replace(/\s+/g, '-');
-
-console.log("String with hyphens: " + stringWithHyphens);
-
-}
+console.log("Original string: " + inputString);
+console.log("Formatted string: " + result);
